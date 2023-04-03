@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputField = ({ label, type, id, name, value, onChange }) => {
+export const InputField = ({ label, type, id, name, value, onChange }) => {
   return (
     <div className="mb-4">
       <label className="block text-gray-700 font-medium mb-2" htmlFor={id}>
@@ -17,5 +17,3 @@ const InputField = ({ label, type, id, name, value, onChange }) => {
     </div>
   );
 };
-
-export default InputField;
