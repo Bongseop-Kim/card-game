@@ -1,7 +1,13 @@
+import Cookies from "js-cookie";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const navigate = useNavigate();
+
+  const logOut = () => {
+    Cookies.remove("token");
+    navigate("/login");
+  };
 
   return (
     <nav className="bg-gray-800 opacity-70 w-full">
@@ -64,6 +70,9 @@ export const Navbar = () => {
               >
                 카드 건의 게시판
               </NavLink>
+              <div onClick={logOut} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                로그아웃
+              </div>
             </div>
           </div>
         </div>
