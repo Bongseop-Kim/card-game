@@ -10,9 +10,9 @@ export const AllUser = () => {
   ]);
 
   return (
-    <div className="bg-gray-100 p-4 w-full">
+    <div className="bg-gray-100 p-4 col-span-1">
       <h2 className="text-lg font-bold mb-4">Connected Users:</h2>
-      <ul>
+      <ul className="overflow-y-scroll">
         {connectedUsers.map((user) => (
           <li key={user.id} className="text-gray-800 mb-2">
             {user.name}

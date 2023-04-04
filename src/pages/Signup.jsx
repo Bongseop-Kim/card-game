@@ -17,7 +17,7 @@ export const Signup = () => {
 
   return (
     <div className="w-3/4 ">
-      <form className="bg-white p-6 rounded-lg shadow-md">
+      <section className="bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-medium mb-6">Sign up</h2>
         <InputField
           label="Email"
@@ -42,7 +42,7 @@ export const Signup = () => {
           className="bg-green-500 hover:bg-green-600"
           onClick={() => signUpSubmit()}
         />
-      </form>
+      </section>
     </div>
   );
 };
