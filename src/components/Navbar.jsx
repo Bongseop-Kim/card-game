@@ -9,7 +9,9 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <div className="text-white text-xl font-bold">** 채널</div>
-            <button onClick={() => navigate("/channelSelection")}>채널 나가기</button>
+            <button className="hover:text-white" onClick={() => navigate("/channelSelection")}>
+              채널 나가기
+            </button>
           </div>
           <div className="hidden md:block">
             <div className="flex items-center">
@@ -35,14 +37,14 @@ export const Navbar = () => {
                 상점
               </NavLink>
               <NavLink
-                to="/encyclopedia"
+                to="/monsterDictionary"
                 activeClassName="text-white"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 도감
               </NavLink>
               <NavLink
-                to="/encyclopedia"
+                to="/"
                 activeClassName="text-white"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >

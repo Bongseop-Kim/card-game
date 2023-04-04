@@ -1,12 +1,13 @@
 import { Layout } from "../components/Layout";
 import { ReactComponent as Lock } from "../assets/lock.svg";
 import { ReactComponent as UnLock } from "../assets/unlock.svg";
+
 const rooms = [
-  { id: 1, title: "~~의 방", lock: true, cntMember: 1, isStart: false },
-  { id: 1, title: "~~의 방", lock: false, cntMember: 1, isStart: true },
-  { id: 1, title: "~~의 방", lock: false, cntMember: 1, isStart: false },
-  { id: 1, title: "~~의 방", lock: false, cntMember: 1, isStart: false },
-  { id: 1, title: "~~의 방", lock: false, cntMember: 1, isStart: false },
+  { id: "001", title: "~~의 방", lock: true, cntMember: 1, isStart: false },
+  { id: "001", title: "~~의 방", lock: false, cntMember: 1, isStart: true },
+  { id: "001", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
+  { id: "001", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
+  { id: "001", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
 ];
 export const Home = () => {
   return (

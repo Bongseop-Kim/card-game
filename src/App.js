@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
-import { MonsterDictionary } from "./pages/MonsterDictionay.jsx";
+import { MonsterDictionary } from "./pages/MonsterDictionary.jsx";
 import { ChannelSelection } from "./pages/ChannelSelection.jsx";
 import { Home } from "./pages/Home";
 

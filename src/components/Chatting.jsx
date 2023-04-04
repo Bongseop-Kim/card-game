@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/en";
+import { ReactComponent as DropDown } from "../assets/drop_down.svg";
+import { ReactComponent as DropUp } from "../assets/drop_up.svg";
 dayjs.extend(relativeTime);
 
 export const Chatting = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [chatting, setChatting] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -20,19 +23,30 @@ export const Chatting = () => {
   }
 
   return (
-    <div className="bg-gray-800 opacity-70 flex flex-col justify-between h-full py-4 px-2">
-      <div className="overflow-y-scroll py-2 ">
+    <div
+      className={`${
+        chatting ? "h-48" : "h-96"
+      } bg-gray-400 rounded-lg flex flex-col justify-start border-t-4 px-2 sticky bottom-0`}
+    >
+      <div>
+        {chatting ? (
+          <DropDown className="cursor-pointer hover:cursor-pointer" onClick={() => setChatting(false)} />
+        ) : (
+          <DropUp className="cursor-pointer hover:cursor-pointer" onClick={() => setChatting(true)} />
+        )}
+      </div>
+      <div className="overflow-y-scroll h-full border rounded">
         <div className="p-4 flex-1">
           {messages.map((message, index) => (
-            <div key={index} className="p-2 mb-4 rounded-lg grid grid-cols-6 bg-white shadow-md">
+            <div key={index} className="mb-4 rounded-lg grid grid-cols-6">
               <div className="font-bold col-span-1">{message.author}</div>
-              <div className="w-full col-span-4">{message.content}</div>
+              <div className="w-full col-span-4 truncate ">{message.content}</div>
               <div className="text-gray-600 text-sm col-span-1">{dayjs(message.createdAt).locale("en").fromNow()}</div>
             </div>
           ))}
         </div>
       </div>
-      <form onSubmit={handleSubmit} className="py-4 pl-4">
+      <form onSubmit={handleSubmit} className="py-4">
         <div className="flex">
           <input
             type="text"
