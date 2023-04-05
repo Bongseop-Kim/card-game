@@ -4,10 +4,10 @@ import { ReactComponent as UnLock } from "../assets/unlock.svg";
 
 const rooms = [
   { id: "001", title: "~~의 방", lock: true, cntMember: 1, isStart: false },
-  { id: "001", title: "~~의 방", lock: false, cntMember: 1, isStart: true },
-  { id: "001", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
-  { id: "001", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
-  { id: "001", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
+  { id: "002", title: "~~의 방", lock: false, cntMember: 1, isStart: true },
+  { id: "003", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
+  { id: "004", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
+  { id: "005", title: "~~의 방", lock: false, cntMember: 1, isStart: false },
 ];
 export const Home = () => {
   return (
@@ -16,6 +16,7 @@ export const Home = () => {
         {rooms.map((room) => {
           return (
             <div
+              key={room.id}
               className={`flex border rounded-lg p-4 text-xl items-center ${
                 room.isStart ? "bg-gray-400" : "hover:cursor-pointer"
               }`}

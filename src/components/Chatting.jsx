@@ -4,17 +4,19 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/en";
 import { ReactComponent as DropDown } from "../assets/drop_down.svg";
 import { ReactComponent as DropUp } from "../assets/drop_up.svg";
+import { useSelector } from "react-redux";
 dayjs.extend(relativeTime);
 
 export const Chatting = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [chatting, setChatting] = useState(false);
+  const userItem = useSelector((state) => state.userItem);
 
   function handleSubmit(event) {
     event.preventDefault();
     const newMessage = {
-      author: "John Doe", // replace with the actual author's name
+      author: userItem.name,
       content: inputValue,
       createdAt: new Date(),
     };
